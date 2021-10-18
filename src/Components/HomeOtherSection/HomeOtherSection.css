@@ -1,0 +1,15 @@
+.Homeabout-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: #FAFAFA;
+    margin-bottom: 150px;
+    
+    
+    
+}
+.Homeabout-content{
+    padding-top:  105px;;
+}
+.Homeabout-img img{
+    width: 700px;
+}
