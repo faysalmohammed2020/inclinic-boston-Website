@@ -1,0 +1,15 @@
+.Header-nav a{
+    text-decoration: none;
+    margin-left: 50px;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+
+}
+.Header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: beige;
+    
+}
