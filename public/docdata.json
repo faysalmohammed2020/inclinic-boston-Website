@@ -1,0 +1,42 @@
+[{
+	"id":"01",
+	"name":"Andrew Smith",
+	"img":"https://inclinic.cmsmasters.net/boston/wp-content/uploads/sites/11/2021/04/doctor-1.jpg",
+	"role":"Cancer Care",
+	"price":"9000"
+	},
+	{
+	"id":"02",
+	"name":"Adam Johnson",
+	"img":"https://inclinic.cmsmasters.net/boston/wp-content/uploads/sites/11/2021/04/doctor-3.jpg",
+	"role":"Gasto Care",
+	"price":"4000"},
+	{
+		"id":"03",
+		"name":"Amy Brown",
+		"img":"https://inclinic.cmsmasters.net/boston/wp-content/uploads/sites/11/2021/04/doctor-2.jpg",
+		"role":"Urgent Care",
+		"price":"3000"
+	},
+	{
+		"id":"04",
+		"name":"Abby Brock",
+		"img":"https://inclinic.cmsmasters.net/boston/wp-content/uploads/sites/11/2021/04/doctor-4.jpg",
+		"role":"Eye Care",
+		"price":"7000"
+	},
+	{
+		"id":"05",
+		"name":"Jane Green",
+		"img":"https://inclinic.cmsmasters.net/boston/wp-content/uploads/sites/11/2021/04/doctor-6.jpg",
+		"role":"Primary Care",
+		"price":"10000"
+	},
+	{
+		"id":"06",
+		"name":"Helen Traum",
+		"img":"https://inclinic.cmsmasters.net/boston/wp-content/uploads/sites/11/2021/04/doctor-5.jpg",
+		"role":"Orthopedic Care",
+		"price":"4000"
+	}
+	]
