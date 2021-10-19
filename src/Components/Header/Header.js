@@ -2,8 +2,10 @@ import React from 'react';
 import'./Header.css';
 import logo from '../../images/logo.svg'
 import { NavLink } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 const Header = () => {
+    
     return (
         <div>
             
@@ -35,7 +37,8 @@ const Header = () => {
        padding:'10px',
        borderRadius:'10px'
        }}
-        to="/Login">Login</NavLink>
+        to="/Contact">Contact</NavLink>
+            
             <NavLink activeStyle={{
        fontWeight: "bold",
        color: "white",

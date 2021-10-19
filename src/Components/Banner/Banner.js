@@ -13,7 +13,7 @@ const Banner = () => {
                 <button className="btn btn-danger" ><a href="/Register "style={{color:"White",textDecoration:"none"}}>Register Now</a></button>
             </div>
             <div >
-                    <img src={image1} style={{width:'650px'}}/>
+                    <img src={image1} style={{width:'650px'}} alt=""/>
             </div>
            
         </div>

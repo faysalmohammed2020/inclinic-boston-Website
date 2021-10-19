@@ -1,0 +1,25 @@
+#formBasicEmail{
+    width: 100%;
+    
+}
+#formBasicPassword{
+    width: 100%;
+    
+}
+.contact-img img{
+    width: 450px;
+}
+.contact-container{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 210px;
+    background-color: #E8EEFE;
+    
+}
+.contact-form {
+    padding-right: 455px;
+padding-top: 210px;
+}
+#contact-btn-google{
+    margin-left: 10px;
+}

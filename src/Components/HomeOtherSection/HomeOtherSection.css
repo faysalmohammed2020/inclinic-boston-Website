@@ -8,8 +8,21 @@
     
 }
 .Homeabout-content{
-    padding-top:  105px;;
+    padding-top:  105px;
 }
 .Homeabout-img img{
     width: 700px;
+}
+.homeothersection-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 150px;
+}
+.homeothersection-img img{
+    width: 600px;
+}
+.homeothersection-content{
+    padding-top:  105px;
+    margin-left: 35px;
+    
 }
