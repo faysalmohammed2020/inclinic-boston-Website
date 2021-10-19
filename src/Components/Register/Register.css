@@ -1,4 +1,4 @@
- #formBasicEmail{
+#formBasicEmail{
     width: 100%;
     
 }
@@ -6,24 +6,17 @@
     width: 100%;
     
 }
-/* #Submit-btn{
-    margin-left: 540px;
-} */
-/* .login-form{
-    margin-top: 200px;
-}  */
-
-.login-img img{
+.register-img img{
     width: 450px;
 }
-.login-container{
+.register-container{
     display: flex;
     justify-content: space-between;
     margin-left: 210px;
-    background-color: #E8EEFE;
+    background-color: #FF8E87;
     
 }
-.login-form {
+.register-form{
     padding-right: 455px;
 padding-top: 210px;
 }

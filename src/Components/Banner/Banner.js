@@ -10,7 +10,7 @@ const Banner = () => {
                 <h3 style={{color:'#EC4949'}}>DIGITAL HEALTH</h3>
                 <h1 style={{fontWeight:'600'}}>Virtual urgent care</h1>
                 <p>Get a diagnosis and treatment plan without leaving the comfort of home.<br/> By downloading the NYP Connect app, you can access <br/>world-class care from the teams at Columbia and Weill Cornell Medicine.</p> 
-                <button className="btn btn-danger">Register Now</button>
+                <button className="btn btn-danger" ><a href="/Register "style={{color:"White",textDecoration:"none"}}>Register Now</a></button>
             </div>
             <div >
                     <img src={image1} style={{width:'650px'}}/>

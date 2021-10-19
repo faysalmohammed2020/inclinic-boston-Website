@@ -1,16 +1,15 @@
-
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
-import'./Login.css';
-import loginimg from '../../images/login.jpg'
+import'./Register.css';
+import regimg from '../../images/register.jpg'
 
-const Login = () => {
+const Register = () => {
     return (
-       <div className="login-container">
-           <div className ="login-img">
-            <img src ={loginimg} />
+        <div className="register-container">
+           <div className ="register-img">
+            <img src ={regimg} />
            </div>
-    <div className="login-form">
+    <div className="register-form">
 <Form>
   <Form.Group className="mb-3" controlId="formBasicEmail">
    <Form.Control type="email" placeholder="Enter email" />
@@ -19,16 +18,17 @@ const Login = () => {
   <Form.Group className="mb-3" controlId="formBasicPassword">
    <Form.Control type="password" placeholder="Password" />
   </Form.Group>
-  <Button variant="primary" type="submit" id="Submit-btn">
-    Login
-  </Button> or
-   <Button variant="primary" type="submit" id="login-btn-google">
+  <Button variant="danger" type="submit" id="Submit-btn">
+    Register
+  </Button>  or
+   <Button variant="danger" type="submit" id="login-btn-google">
     Login with google
   </Button>
+
 </Form>
        </div>
        </div>
     );
 };
 
- export default Login;
+export default Register;
