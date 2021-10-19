@@ -1,12 +1,12 @@
 import React from 'react';
 import'./Header.css';
 import logo from '../../images/logo.svg'
-import { Link, NavLink } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
-import useFirebase from '../../hooks/useFirebase';
+import {  NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
+
 
 const Header = () => {
-    const {user , logOut} = useFirebase();
+    const {user , logOut} = useAuth();
     
     return (
         <div>

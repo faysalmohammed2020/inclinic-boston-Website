@@ -5,7 +5,9 @@ import regimg from '../../images/register.jpg';
 import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword} from "firebase/auth";
 
 import { useState } from 'react';
-import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
+import { useHistory, useLocation } from 'react-router';
+
 
  
 
@@ -23,7 +25,19 @@ import useFirebase from '../../hooks/useFirebase';
           
         
     // }
-    const {signInWithGoogle} = useFirebase();
+    const {signInWithGoogle} = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_url = location.state?.from  || '/Home';
+    console.log('came from',location.state?.from);
+    const handleGoogleSignIn = () =>{
+        signInWithGoogle()
+        .then((result) =>{
+            history.push(redirect_url)
+            })
+            
+              
+    }
     const togglelogin = e =>{
         setIsLogin(e.target.checked)
     }
@@ -109,7 +123,7 @@ import useFirebase from '../../hooks/useFirebase';
 
 </Form>
 <br/>
-<Button variant="danger" type="submit" id="login-btn-google" onClick ={signInWithGoogle}>
+<Button variant="danger" type="submit" id="login-btn-google" onClick ={handleGoogleSignIn}>
     Login with google
   </Button>
        </div>

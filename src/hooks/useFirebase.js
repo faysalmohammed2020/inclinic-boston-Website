@@ -11,20 +11,14 @@ const useFirebase = () =>{
     
     const signInWithGoogle = () =>{
         
-        signInWithPopup(auth, provider)
-        .then((result) =>{
-        //     const{displayName,email} = result.user;
-        //     const loggeduser ={
-        //         name: displayName,
-        //         mail: email
-        //     }
-        //   setUser(loggeduser);
-        const user = result.user;
-        console.log(user);
-        })
-        .catch(error =>{
-            setError(error.message);
-        })
+        return signInWithPopup(auth, provider)
+        // .then((result) =>{
+        // const user = result.user;
+        // console.log(user);
+        // })
+        // .catch(error =>{
+        //     setError(error.message);
+        // })
           
         
     }

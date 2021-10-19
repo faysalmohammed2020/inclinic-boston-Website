@@ -9,6 +9,8 @@ import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import Notfound from './Components/Notfound/Notfound';
 import About from './Components/About/About';
+import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
 
@@ -16,6 +18,7 @@ function App() {
   return (
     <div>
      
+      <AuthProvider>
       <BrowserRouter>
           <Header></Header>
       <Switch>
@@ -25,12 +28,12 @@ function App() {
         <Route path = "/Home">
          <Home></Home>
         </Route>
-        <Route path = "/About">
+        <PrivateRoute path = "/About">
          <About></About>
-        </Route>
-        <Route exact path ="/Contact"> 
+        </PrivateRoute>
+        <PrivateRoute exact path ="/Contact"> 
         <Contact></Contact>
-        </Route>
+        </PrivateRoute>
         <Route exact path ="/Register"> 
         <Register></Register>
         </Route>
@@ -40,6 +43,7 @@ function App() {
       </Switch>
       <Footer></Footer>
      </BrowserRouter>
+      </AuthProvider>
      
     </div>
   );
