@@ -2,33 +2,28 @@ import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import'./Register.css';
 import regimg from '../../images/register.jpg';
-import { getAuth, signInWithPopup,GoogleAuthProvider,createUserWithEmailAndPassword,signInWithEmailAndPassword} from "firebase/auth";
-import initializeAuthentication from '../../Firebase/firebase.initialize';
+import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword} from "firebase/auth";
+
 import { useState } from 'react';
+import useFirebase from '../../hooks/useFirebase';
 
-initializeAuthentication();
-const provider = new GoogleAuthProvider();
+ 
 
-const Register = () => {
-    const[user,setUser] =useState({})
+
+ const Register = () => {
+
     const[email,setEmail] =useState('');
     const[password,setPassword] =useState('');
-    const[isLogin,setIsLogin] =useState(false);
-    const auth = getAuth();
-     const handleGoogleSignIn = () =>{
+     const[isLogin,setIsLogin] =useState(false);
+     const[error,setError] = useState('');
+   const auth = getAuth();
+    //  const handleGoogleSignIn = () =>{
         
-        signInWithPopup(auth, provider)
-        .then((result) =>{
-            const{displayName,email} = result.user;
-            const loggeduser ={
-                name: displayName,
-                mail: email
-            }
-          setUser(loggeduser);
-        })
+        
           
         
-    }
+    // }
+    const {signInWithGoogle} = useFirebase();
     const togglelogin = e =>{
         setIsLogin(e.target.checked)
     }
@@ -40,12 +35,32 @@ const Register = () => {
     }
 
     const handleregistration = e =>{
-        console.log(email,password)
+        e.preventDefault();
+        console.log(email,password);
+        if(password.length<6){
+            setError("Password Must be atleast 6 charatcer's Long")
+            return;
+        }
+        
+        createUserWithEmailAndPassword(auth,email,password)
+        .then((result) => {
+            const user = result.user;
+            console.log(user);
+            setError('');
+            
+        })
+        .catch(error =>{
+            setError(error.message);
+        });
+        
+        
+        
         
         isLogin? userLogin(email,password) : createNewUser(email,password);
-         e.preventDefault();
+        
     }
-     const userLogin =(email,password)=>{
+      const userLogin =(email,password)=>{
+        
         signInWithEmailAndPassword(auth,email,password)
         .then((result) => {
             const user = result.user;
@@ -53,14 +68,19 @@ const Register = () => {
             
         })
      }
-    const createNewUser =(email,password) =>{
-        createUserWithEmailAndPassword(auth,email,password)
-        .then((result) => {
-            const user = result.user;
-            console.log(user);
-            
-        })
-    }
+    
+    const createNewUser = (email,password)=>{    
+    createUserWithEmailAndPassword(auth,email,password)
+    .then((result) => {
+        const user = result.user;
+        console.log(user);
+        setError('');
+        
+    })
+    .catch(error =>{
+        setError(error.message);
+    });
+}
     return (
         <div className="register-container">
            <div className ="register-img">
@@ -79,14 +99,19 @@ const Register = () => {
   <Form.Group  className="mb-3" controlId="formBasicCheckbox">
     <Form.Check onChange={togglelogin} type="checkbox" label="Already Registered? " />
   </Form.Group>
+  <div className="error text-danger">{error}</div>
   <Button variant="danger" type="submit" id="Submit-btn"  >
   {isLogin ? "Login" : "Register"}
   </Button>  or
-   <Button variant="danger" type="submit" id="login-btn-google" onClick ={handleGoogleSignIn}>
+   {/* <Button variant="danger" type="submit" id="login-btn-google" onClick ={signInWithGoogle}>
     Login with google
-  </Button>
+  </Button> */}
 
 </Form>
+<br/>
+<Button variant="danger" type="submit" id="login-btn-google" onClick ={signInWithGoogle}>
+    Login with google
+  </Button>
        </div>
        </div>
     );

@@ -1,10 +1,12 @@
 import React from 'react';
 import'./Header.css';
 import logo from '../../images/logo.svg'
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+import useFirebase from '../../hooks/useFirebase';
 
 const Header = () => {
+    const {user , logOut} = useFirebase();
     
     return (
         <div>
@@ -39,14 +41,38 @@ const Header = () => {
        }}
         to="/Contact">Contact</NavLink>
             
-            <NavLink activeStyle={{
+            {/* <NavLink activeStyle={{
        fontWeight: "bold",
        color: "white",
        background: '#FF284F',
        padding:'10px',
        borderRadius:'10px'
        }}
-        to="/Register">Register</NavLink>
+        to="/Register">Register/Login</NavLink> */}
+            <img src={user.photoURL} className="userimg"/>
+        <span className="Displayname">{user.displayName}</span>
+       
+
+
+        {user.email ?
+        
+        <NavLink activeStyle={{
+       fontWeight: "bold",
+       color: "white",
+       background: '#FF284F',
+       padding:'10px',
+       borderRadius:'10px'
+       }}
+        to="/Register" onClick={logOut}>LogOut</NavLink>
+        
+        : <NavLink activeStyle={{
+       fontWeight: "bold",
+       color: "white",
+       background: '#FF284F',
+       padding:'10px',
+       borderRadius:'10px'
+       }}
+        to="/Register">Register/Login</NavLink> }
            </div>
         </div>
         </div>
