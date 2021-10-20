@@ -12,8 +12,8 @@ const Banner = () => {
                 <p>Get a diagnosis and treatment plan without leaving the comfort of home.<br/> By downloading the NYP Connect app, you can access <br/>world-class care from the teams at Columbia and Weill Cornell Medicine.</p> 
                 <button className="btn btn-danger" ><a href="/Register "style={{color:"White",textDecoration:"none"}}>Register Now</a></button>
             </div>
-            <div >
-                    <img src={image1} style={{width:'650px'}} alt=""/>
+            <div className="banner-img">
+                    <img src={image1}  alt=""/>
             </div>
            
         </div>

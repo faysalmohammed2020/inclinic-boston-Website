@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import'./Service.css';
 
 const Service = (props) => {
-    const{name,role,img} =props.service;
+    const{id,name,role,img} =props.service;
     return (
     <div className="Service-container">
         <div className="card" >
@@ -11,7 +12,9 @@ const Service = (props) => {
                     <h5 className="card-title">{name}</h5>
                     <p className="card-text">{role}</p>
                    
-                <a href="#" className="btn btn-danger">Appointment Now</a>
+            <Link to = {`/DisplayDetails/${id}`}>
+                <button href="#" className="btn btn-danger">Appointment Now</button>
+                </Link>
                 </div>
         </div>
 </div>

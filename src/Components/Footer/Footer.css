@@ -2,7 +2,16 @@
     background-color: black;
     color: white;
     text-align: center;
-    padding: 30px;
-    margin-top: 58px;
+    padding: 50px;
+    margin-top: 0px;
     
+}
+.footer p{
+    margin-top: 10px;
+}
+.footer-menu a{
+    text-decoration: none;
+    margin-left: 20px;
+    color: white;
+    margin-bottom: 25px;
 }

@@ -49,8 +49,9 @@ const Header = () => {
        borderRadius:'10px'
        }}
         to="/Register">Register/Login</NavLink> */}
-            <img src={user.photoURL} className="userimg"/>
+        
         <span className="Displayname">{user.displayName}</span>
+        <img src={user.photoURL} className="userimg"/>
        
 
 
@@ -64,6 +65,7 @@ const Header = () => {
        borderRadius:'10px'
        }}
         to="/Register" onClick={logOut}>LogOut</NavLink>
+        
         
         : <NavLink activeStyle={{
        fontWeight: "bold",

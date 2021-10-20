@@ -11,6 +11,7 @@ import Notfound from './Components/Notfound/Notfound';
 import About from './Components/About/About';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import DisplayDetails from './Components/DisplayDetails/DisplayDetails';
 
 
 
@@ -25,12 +26,15 @@ function App() {
         <Route exact path ="/">
         <Home></Home>
         </Route>
-        <Route path = "/Home">
+        <Route exact path = "/Home">
          <Home></Home>
         </Route>
         <PrivateRoute path = "/About">
          <About></About>
         </PrivateRoute>
+        <Route path = "/DisplayDetails/:detailsid">
+          <DisplayDetails></DisplayDetails>
+          </Route>
         <PrivateRoute exact path ="/Contact"> 
         <Contact></Contact>
         </PrivateRoute>
