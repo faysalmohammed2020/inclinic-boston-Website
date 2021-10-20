@@ -2,8 +2,9 @@
     width: 100%;
     
 }
-#formBasicPassword{
+#exampleForm.ControlTextarea1{
     width: 100%;
+    margin-bottom: 10px;
     
 }
 .contact-img img{
@@ -17,9 +18,11 @@
     
 }
 .contact-form {
-    padding-right: 455px;
-padding-top: 210px;
+padding-right: 455px;
+padding-top: 150px;
+
 }
-#contact-btn-google{
-    margin-left: 10px;
+#Submit-btn{
+    margin-left: 0px;
+    margin-top: 5px;
 }
