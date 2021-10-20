@@ -3,7 +3,6 @@ import './App.css';
 import Home from './Components/Home/Home';
 import Header from './Components/Header/Header';
 import { BrowserRouter,Switch ,Route} from 'react-router-dom';
-import Login from './Components/Login/Login';
 import Register from './Components/Register/Register';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
@@ -32,9 +31,9 @@ function App() {
         <PrivateRoute path = "/About">
          <About></About>
         </PrivateRoute>
-        <Route path = "/DisplayDetails/:detailsid">
+        <PrivateRoute path = "/DisplayDetails/:detailsid">
           <DisplayDetails></DisplayDetails>
-          </Route>
+          </PrivateRoute>
         <PrivateRoute exact path ="/Contact"> 
         <Contact></Contact>
         </PrivateRoute>
